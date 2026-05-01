@@ -8,7 +8,9 @@ import Tasks from './pages/Tasks';
 import Profile from './pages/Profile';
 import Toast from './components/Toast';
 
-const API = axios.create({ baseURL: '/api' });
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000/api"
+});
 
 export default function App() {
   const [page, setPage] = useState('home');
